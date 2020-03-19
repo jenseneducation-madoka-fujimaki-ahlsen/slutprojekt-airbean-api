@@ -35,9 +35,6 @@
               >Orderstatus</router-link
             >
           </li>
-          <!-- <li><a href="#">Meny</a></li>
-          <li><a href="#">Vårt kaffe</a></li>
-          <li><a href="#">Orderstatus</a></li> -->
         </ul>
       </nav>
     </div>
