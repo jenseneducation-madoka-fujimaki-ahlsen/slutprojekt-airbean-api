@@ -10,7 +10,10 @@
               <img class="add__img" src="@/assets/graphics/add.svg" alt="" />
               <div class="add__icon-bg"></div>
             </div>
-            <div class="title">{{ item.title }}........</div>
+            <div class="title">
+              {{ item.title }}
+              <div class="border">....................</div>
+            </div>
             <div class="price">{{ item.price }} kr</div>
             <div class="desc">{{ item.desc }}</div>
           </div>
@@ -42,8 +45,12 @@ export default {
 </script>
 
 <style lang="scss">
+$brown: #2f2926;
+$light-brown: #81726c;
+
 .wrap {
   height: 100vh;
+  color: $brown;
 }
 
 .menu-wrap {
@@ -61,11 +68,12 @@ ul {
 
 li {
   list-style: none;
+  margin: 32px 0;
 }
 
 .item-wrap {
   display: grid;
-  grid-template-columns: 1fr 10fr 3fr;
+  grid-template-columns: 1fr 10fr 4fr;
   grid-template-rows: repeat(2, auto);
   text-align: left;
 
@@ -73,35 +81,45 @@ li {
     grid-area: 1 / 1 / 3 / 2;
     position: relative;
     display: flex;
-    margin-right: 16px;
+    margin: 6px 16px 0 0;
 
     &__img {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       position: absolute;
-      margin: 10px auto auto 10px;
+      margin: 8px auto auto 8px;
     }
     &__icon-bg {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      background-color: black;
+      background-color: $brown;
     }
   }
 
   .title {
     font-size: 20px;
     grid-area: 1 / 2 / 2 / 2;
+    display: flex;
+    position: relative;
+
+    .border {
+      position: absolute;
+      right: 0;
+      color: $light-brown;
+      opacity: 0.5;
+    }
   }
 
   .price {
     font-size: 20px;
     grid-area: 1 / 3 / 2 / 4;
+    margin-left: 20px;
   }
 
   .desc {
     grid-area: 2 / 2 / 3 / 4;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
