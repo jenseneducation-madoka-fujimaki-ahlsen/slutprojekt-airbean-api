@@ -24,13 +24,13 @@
     <div name="nav">
       <nav class="nav" v-show="nav">
         <ul class="nav__wrap">
-          <li><router-link class="menu-list" to="/menu">Meny</router-link></li>
-          <li>
+          <li @click="NavMenuClose"><router-link class="menu-list"  to="/menu">Meny</router-link></li>
+          <li @click="NavMenuClose">
             <router-link class="menu-list" to="/our-coffee"
               >Vårt kaffe</router-link
             >
           </li>
-          <li>
+          <li @click="NavMenuClose">
             <router-link class="menu-list" to="/orderstatus"
               >Orderstatus</router-link
             >
@@ -66,6 +66,7 @@ export default {
   height: 100%;
   position: absolute;
   top: 0;
+  z-index: 9999;
 
   &__bg {
     width: 100%;
