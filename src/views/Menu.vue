@@ -10,7 +10,7 @@
               <img class="add__img" src="@/assets/graphics/add.svg" alt="" />
               <div class="add__icon-bg"></div>
             </div>
-            <div class="title">{{ item.title }}............</div>
+            <div class="title">{{ item.title }}........</div>
             <div class="price">{{ item.price }} kr</div>
             <div class="desc">{{ item.desc }}</div>
           </div>
@@ -65,7 +65,7 @@ li {
 
 .item-wrap {
   display: grid;
-  grid-template-columns: 1fr 10fr 2fr;
+  grid-template-columns: 1fr 10fr 3fr;
   grid-template-rows: repeat(2, auto);
   text-align: left;
 
