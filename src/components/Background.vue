@@ -5,9 +5,7 @@
         <p>{{ text }}</p>
         <img src="@/assets/graphics/eva-cortado.jpg">
         <h2>{{ name }}</h2>
-        <h3>{{ occupation }}</h3>
-
-        
+        <h3>{{ occupation }}</h3>     
     </div>
 </div>
 </template>
