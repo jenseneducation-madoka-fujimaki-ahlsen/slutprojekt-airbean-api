@@ -8,14 +8,15 @@
           alt=""
         />
       </div>
-
-      <div class="center">
-        <img
-          class="center__img"
-          src="@/assets/graphics/airbean-landing.svg"
-          alt=""
-        />
-      </div>
+      <router-link class="center" to="/our-coffee">
+        <div class="center">
+          <img
+            class="center__img"
+            src="@/assets/graphics/airbean-landing.svg"
+            alt=""
+          />
+        </div>
+      </router-link>
 
       <div class="right">
         <img
