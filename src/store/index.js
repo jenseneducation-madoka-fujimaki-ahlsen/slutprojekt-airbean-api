@@ -22,13 +22,13 @@ export default new Vuex.Store({
 
   },
   actions: {
-
-  },
-  async getMenu(context) {
+    async getMenu(context) {
     const data = await API.fetchMenu();
     context.commit("persistMenu", data);
     // return true;
+  }
   },
+ 
   modules: {
   }
 });
