@@ -1,9 +1,13 @@
 <template>
   <div class="background">
     <div class="our-coffee">
+        <!-- <img :src="headerImagePath" alt="graphics-header"> -->
+        <!-- <img src="@/assets/graphics/graphics-header.svg" alt=""> -->
       <h1>{{ title }}</h1>
+      <span>
       <p id="text1">{{ text1 }}</p>
       <p id="text2">{{ text2 }}</p>
+      </span>
       <img src="@/assets/graphics/eva-cortado.jpg" />
       <h2>{{ name }}</h2>
       <h3>{{ occupation }}</h3>
@@ -12,19 +16,13 @@
 </template>
 
 <script>
-import store from "@/store/index";
-import { mapState, mapGetters } from "vuex";
+
+import { mapState } from "vuex";
 
 export default {
   name: "Background",
   computed: {
-    ...mapState(["title", "text1", "text2", "name", "occupation"]),
-    ...mapGetters({
-      pathImage: "getImage"
-    }),
-    products() {
-      return store.state.products;
-    }
+    ...mapState(["title", "text1", "text2", "name", "occupation", "headerImagePath"]),
   }
 };
 </script>
@@ -36,6 +34,7 @@ export default {
 
 .our-coffee {
   background: rgb(243, 228, 225);
+  height: 100vh;
 }
 h1 {
   font-family: "PT Serif", serif;
