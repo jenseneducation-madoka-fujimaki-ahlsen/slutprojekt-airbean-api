@@ -24,12 +24,18 @@
     <div name="nav">
       <nav class="nav" v-show="nav">
         <ul class="nav__wrap">
-          <li @click="NavMenuClose"><router-link class="menu-list"  to="/menu">Meny</router-link></li>
+          <li @click="NavMenuClose">
+            <router-link class="menu-list" to="/menu">Meny </router-link>
+            <div class="line"></div>
+          </li>
+
           <li @click="NavMenuClose">
             <router-link class="menu-list" to="/our-coffee"
-              >Vårt kaffe</router-link
-            >
+              >Vårt kaffe
+            </router-link>
+            <div class="line"></div>
           </li>
+
           <li @click="NavMenuClose">
             <router-link class="menu-list" to="/orderstatus"
               >Orderstatus</router-link
@@ -61,6 +67,9 @@ export default {
 </script>
 
 <style lang="scss">
+$brown: #2f2926;
+$light-brown: #81726c;
+
 .nav-menu-wrap {
   width: 100%;
   height: 100%;
@@ -71,7 +80,7 @@ export default {
   &__bg {
     width: 100%;
     height: 100%;
-    background-color: #2f2926;
+    background-color: $brown;
     position: absolute;
   }
 }
@@ -115,7 +124,17 @@ img {
 }
 
 li {
-  margin: 35px 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .line {
+    border-bottom: 1px solid $light-brown;
+    width: 64px;
+    margin: 20px 0 0 0;
+    opacity: 0.5;
+  }
 }
 
 .menu-list {
