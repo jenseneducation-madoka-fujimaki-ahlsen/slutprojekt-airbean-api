@@ -40,6 +40,9 @@ export default {
     menu() {
       return this.$store.state.menu;
     }
+  },
+  mounted() {
+    this.$store.dispatch("getMenu");
   }
 };
 </script>
