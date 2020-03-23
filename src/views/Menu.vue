@@ -6,7 +6,7 @@
       <ul>
         <li v-for="item in menu" v-bind:key="item.id">
           <div class="item-wrap">
-            <div class="add">
+            <div class="add" @click="addItem">
               <img class="add__img" src="@/assets/graphics/add.svg" alt="" />
               <div class="add__icon-bg"></div>
             </div>
@@ -43,6 +43,11 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getMenu");
+  },
+  methods:{
+    addItem(){
+
+    }
   }
 };
 </script>
