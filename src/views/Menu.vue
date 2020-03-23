@@ -54,7 +54,7 @@ $brown: #2f2926;
 $light-brown: #81726c;
 
 .wrap {
-  height: 100vh;
+  height: 100%;
   color: $brown;
 }
 
