@@ -1,6 +1,6 @@
 <template>
-  <div class="nav-menu-wrap">
-    <div class="nav-menu-wrap__bg" v-show="active"></div>
+  <div class="nav-menu" :class="{ 'nav-menu-open': active }">
+    <div class="nav-menu__bg" v-show="active"></div>
     <div
       @click="NavMenuOpen"
       class="hamburger-menu-wrap"
@@ -70,9 +70,9 @@ export default {
 $brown: #2f2926;
 $light-brown: #81726c;
 
-.nav-menu-wrap {
-  width: 100%;
-  height: 100%;
+.nav-menu {
+  width: 100px;
+  height: 50px;
   position: absolute;
   top: 0;
   z-index: 9999;
@@ -83,6 +83,11 @@ $light-brown: #81726c;
     background-color: $brown;
     position: absolute;
   }
+}
+
+.nav-menu-open {
+  width: 100%;
+  height: 100%;
 }
 
 .hamburger-menu-wrap {

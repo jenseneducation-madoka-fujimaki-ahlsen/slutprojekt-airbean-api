@@ -3,9 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Menu from "../views/Menu.vue";
 import OurCoffee from "../views/OurCoffee.vue";
-import Orderstatus from "../views/Orderstatus.vue";
+import Orderstatus from "../views/OrderStatus.vue";
 import Cart from "../views/Cart.vue";
-
 
 Vue.use(VueRouter);
 
@@ -21,7 +20,7 @@ const routes = [
     component: Menu
   },
   {
-    path: "/ourcoffee",
+    path: "/our-coffee",
     name: "OurCoffee",
     component: OurCoffee
   },
