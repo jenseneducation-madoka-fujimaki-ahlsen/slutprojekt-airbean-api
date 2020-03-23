@@ -1,12 +1,13 @@
 <template>
   <div class="wrap">
     <Nav />
+    <Bag />
     <div class="menu-wrap">
       <h1>Meny</h1>
       <ul>
         <li v-for="item in menu" v-bind:key="item.id">
           <div class="item-wrap">
-            <div class="add" @click="addItem">
+            <div class="add" @click="addItem(item)">
               <img class="add__img" src="@/assets/graphics/add.svg" alt="" />
               <div class="add__icon-bg"></div>
             </div>
@@ -17,12 +18,6 @@
             <div class="price">{{ item.price }} kr</div>
             <div class="desc">{{ item.desc }}</div>
           </div>
-
-          <!-- <div class="title-wrap">
-            <div>{{ item.title }}</div>
-            <div>{{ item.price }} kr</div>
-          </div>
-          <div class="desc">{{ item.desc }}</div> -->
         </li>
       </ul>
     </div>
@@ -31,10 +26,12 @@
 
 <script>
 import Nav from "@/components/Nav";
+import Bag from "@/components/Bag";
 
 export default {
   components: {
-    Nav
+    Nav,
+    Bag
   },
   computed: {
     menu() {
@@ -44,9 +41,9 @@ export default {
   mounted() {
     this.$store.dispatch("getMenu");
   },
-  methods:{
-    addItem(){
-
+  methods: {
+    addItem(item) {
+      this.$store.dispatch("addItem", item);
     }
   }
 };
