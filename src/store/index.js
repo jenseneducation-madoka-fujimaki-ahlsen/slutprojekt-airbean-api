@@ -5,35 +5,43 @@ import * as API from '@/api/index.js';
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    menu: [],
-    cart: [], 
-  },
-  mutations: {
-    persistMenu(state, data) {
-      state.menu = data;
+    state: {
+        menu: [],
+        cart: []
     },
-    addToCart(state, item) {
-      return state.cart.push(item);
-  }
+    mutations: {
+        persistMenu(state, data) {
+            state.menu = data;
+        },
+        addToCart(state, item) {
+            state.cart.push({id: item.id, price: item.price, title: item.title, quantity: 1});
+        },
+        removeFromCart(state, id) {
+            let index = state.cart.findIndex(item => item.id === id)
+            state.cart.splice(index, 1);
 
-  },
-  actions: {
-    async getMenu(context) {
-      const data = await API.fetchMenu();
-      context.commit("persistMenu", data);
-      // return true;
-    }
-  },
-  getters: {
-    total: state => {
-        if(state.cart.length > 0) {
-            return state.cart.map(item => item.price).reduce((total, amount) => total + amount);
-        } else {
-            return 0;
+        },
+        updateItem(state, id) {
+            let index = state.cart.findIndex(item => item.id === id)
+            state.cart[index].quantity ++;
         }
-}
-  },
- 
-  modules: {}
+    },
+    actions: {
+        async getMenu(context) {
+            const data = await API.fetchMenu();
+            context.commit("persistMenu", data);
+            // return true;
+        }
+    },
+    getters: {
+        total: state => {
+            if (state.cart.length > 0) {
+                return state.cart.map(item => item.price).reduce((total, amount) => total + amount);
+            } else {
+                return 0;
+            }
+        }
+    },
+
+    modules: {}
 });
