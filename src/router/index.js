@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import Menu from "../views/Menu.vue";
 import OurCoffee from "../views/OurCoffee.vue";
 import Orderstatus from "../views/Orderstatus.vue";
+import Cart from "../views/Cart.vue";
+
 
 Vue.use(VueRouter);
 
@@ -19,7 +21,7 @@ const routes = [
     component: Menu
   },
   {
-    path: "/our-coffee",
+    path: "/ourcoffee",
     name: "OurCoffee",
     component: OurCoffee
   },
@@ -27,6 +29,11 @@ const routes = [
     path: "/orderstatus",
     name: "Orderstatus",
     component: Orderstatus
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart
   }
 ];
 
