@@ -72,11 +72,13 @@ export default {
   flex-direction: column;
   margin: 20px 32px;
   align-items: center;
+  overflow: scroll;
 }
 
 ul {
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 
 li {

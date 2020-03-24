@@ -77,8 +77,8 @@ export default {
   z-index: 9999;
 
   &__bg {
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: $brown;
     position: absolute;
   }
@@ -135,7 +135,7 @@ li {
   .line {
     border-bottom: 1px solid $light-brown;
     width: 64px;
-    margin: 20px 0 0 0;
+    margin: 25px 0 0 0;
     opacity: 0.5;
   }
 }
