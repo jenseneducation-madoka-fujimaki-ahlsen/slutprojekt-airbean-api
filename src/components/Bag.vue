@@ -28,9 +28,10 @@ export default {
 .bag {
   position: relative;
   z-index: 999;
-  margin: 15px 20px 0 auto;
   width: 60px;
   height: 60px;
+  margin: 0 20px 0 auto;
+  padding-top: 20px;
 }
 
 .counter {
@@ -43,7 +44,8 @@ export default {
 
   &__num {
     color: white;
-    margin: 1px auto;
+    margin-top: 2px;
+    text-align: center;
   }
 }
 
