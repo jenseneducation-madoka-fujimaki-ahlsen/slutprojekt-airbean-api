@@ -23,12 +23,12 @@ export default {
 </script>
 
 <style lang="scss">
-$orange: #e5674e;
+@import "../scss/main";
 
 .bag {
   position: relative;
   z-index: 999;
-  margin: 20px 20px auto auto;
+  margin: 15px 20px 0 auto;
   width: 60px;
   height: 60px;
 }
