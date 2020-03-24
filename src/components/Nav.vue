@@ -67,8 +67,7 @@ export default {
 </script>
 
 <style lang="scss">
-$brown: #2f2926;
-$light-brown: #81726c;
+@import "../scss/main";
 
 .nav-menu {
   width: 100px;

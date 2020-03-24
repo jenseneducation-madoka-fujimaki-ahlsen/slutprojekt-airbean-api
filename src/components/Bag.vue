@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-$orange: #e5674e;
+@import "../scss/main";
 
 .bag {
   position: relative;
