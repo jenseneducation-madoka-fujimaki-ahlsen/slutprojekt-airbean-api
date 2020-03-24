@@ -77,8 +77,8 @@ export default {
   z-index: 9999;
 
   &__bg {
-    width: 100%;
-    height: 100%;
+    width: 100vh;
+    height: 100vh;
     background-color: $brown;
     position: absolute;
   }
@@ -108,7 +108,6 @@ img {
   height: 50px;
   background-color: white;
   border-radius: 50%;
-  border: 1px solid black;
 }
 
 .nav {

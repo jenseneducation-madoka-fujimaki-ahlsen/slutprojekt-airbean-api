@@ -1,0 +1,19 @@
+.bg-graphics {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  left: 0;
+
+  &__top {
+    top: 0;
+  }
+
+  &__bottom {
+    bottom: 0;
+  }
+}
+
+.bg-color{
+    background-color: $pink;
+    width: auto;
+}

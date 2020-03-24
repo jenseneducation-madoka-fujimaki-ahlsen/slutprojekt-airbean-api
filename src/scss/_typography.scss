@@ -1,17 +1,20 @@
 /* TYPOGRAPHY */
 
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700|Work+Sans:300,400,500,600,700,800&display=swap');
 
-// :root {
-//     -webkit-font-smoothing: antialiased;
-//     -moz-osx-font-smoothing: grayscale;
-//     font-family: 'Open Sans', sans-serif;
-// }
+#app {
+    font-family: 'Work Sans', sans-serif;
+}
 
+h1, h2, h3, .pt, .menu-list {
+    font-family: 'PT Serif', serif;
+    font-weight: 600;
+}
 
-// h1, h2, h3 {
-//     margin: 2rem 0 0 0;
-// }
+.title{
+    font-size: 40px;
+    margin: 50px 0 0;
+}
 
 // p {
 //     line-height: 150%;

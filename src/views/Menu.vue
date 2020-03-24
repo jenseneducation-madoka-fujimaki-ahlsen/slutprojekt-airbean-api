@@ -1,9 +1,14 @@
 <template>
-  <div class="wrap">
+  <div class="wrap bg-color">
+    <img
+      class="bg-graphics bg-graphics__top"
+      src="@/assets/graphics/graphics-header.svg"
+      alt=""
+    />
     <Nav />
     <Bag />
     <div class="menu-wrap">
-      <h1>Meny</h1>
+      <h1 class="title">Meny</h1>
       <ul>
         <li v-for="item in menu" v-bind:key="item.id">
           <div class="item-wrap">
@@ -11,16 +16,21 @@
               <img class="add__img" src="@/assets/graphics/add.svg" alt="" />
               <div class="add__icon-bg"></div>
             </div>
-            <div class="title">
+            <div class="item-title pt">
               {{ item.title }}
               <div class="border">....................</div>
             </div>
-            <div class="price">{{ item.price }} kr</div>
-            <div class="desc">{{ item.desc }}</div>
+            <div class="item-price pt">{{ item.price }} kr</div>
+            <div class="item-desc">{{ item.desc }}</div>
           </div>
         </li>
       </ul>
     </div>
+    <img
+      class="bg-graphics bg-graphics__bottom"
+      src="@/assets/graphics/graphics-footer.svg"
+      alt=""
+    />
   </div>
 </template>
 
@@ -53,16 +63,15 @@ export default {
 @import "../scss/main";
 
 .wrap {
-  height: 100%;
+  height: 100vh;
   color: $brown;
 }
 
 .menu-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  margin: 0 32px;
+  margin: 20px 32px;
+  align-items: center;
 }
 
 ul {
@@ -101,7 +110,7 @@ li {
     }
   }
 
-  .title {
+  .item-title {
     font-size: 20px;
     grid-area: 1 / 2 / 2 / 2;
     display: flex;
@@ -115,13 +124,13 @@ li {
     }
   }
 
-  .price {
+  .item-price {
     font-size: 20px;
     grid-area: 1 / 3 / 2 / 4;
     margin-left: 20px;
   }
 
-  .desc {
+  .item-desc {
     grid-area: 2 / 2 / 3 / 4;
     font-size: 12px;
   }
