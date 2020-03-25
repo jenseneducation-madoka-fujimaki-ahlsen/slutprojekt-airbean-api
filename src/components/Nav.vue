@@ -7,7 +7,7 @@
       :class="{ 'is-active': active }"
       v-show="!active"
     >
-      <img src="@/assets/graphics/navicon.svg" alt="" />
+      <img class="nav-icon" src="@/assets/graphics/navicon.svg" alt="" />
       <div class="navicon-bg"></div>
     </div>
 
@@ -66,19 +66,17 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../scss/main";
 
 .nav-menu {
-  width: 100px;
-  height: 50px;
   position: absolute;
   top: 0;
   z-index: 9999;
 
   &__bg {
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: $brown;
     position: absolute;
   }
@@ -135,7 +133,7 @@ li {
   .line {
     border-bottom: 1px solid $light-brown;
     width: 64px;
-    margin: 20px 0 0 0;
+    margin: 25px 0 0 0;
     opacity: 0.5;
   }
 }

@@ -26,12 +26,10 @@ export default {
 @import "../scss/main";
 
 .bag {
-  position: relative;
+  position: absolute;
   z-index: 999;
-  width: 60px;
-  height: 60px;
-  margin: 0 20px 0 auto;
-  padding-top: 20px;
+  top: 20px;
+  right: 20px;
 }
 
 .counter {
@@ -44,20 +42,20 @@ export default {
 
   &__num {
     color: white;
-    margin-top: 2px;
+    margin-top: -2px;
     text-align: center;
   }
 }
 
 .ico-bag {
   &__wrap {
-    display: flex;
   }
 
   &__img {
     margin: 20px auto auto 20px;
     width: 20px;
     height: 20px;
+    position: absolute;
   }
 
   &__bg {

@@ -5,12 +5,14 @@
       src="@/assets/graphics/graphics-header.svg"
       alt=""
     />
+
     <Nav />
     <Bag />
+
     <div class="menu-wrap">
       <h1 class="title">Meny</h1>
-      <ul>
-        <li v-for="item in menu" v-bind:key="item.id">
+      <ul class="menu-list">
+        <li class="menu-list__item" v-for="item in menu" v-bind:key="item.id">
           <div class="item-wrap">
             <div class="add" @click="addItem(item)">
               <img class="add__img" src="@/assets/graphics/add.svg" alt="" />
@@ -63,25 +65,27 @@ export default {
 @import "../scss/main";
 
 .wrap {
-  height: 100vh;
   color: $brown;
+  min-height: 100%;
 }
 
 .menu-wrap {
   display: flex;
   flex-direction: column;
-  margin: 20px 32px;
+  padding: 20px 32px;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-ul {
+.menu-list {
   margin: 0;
   padding: 0;
-}
+  z-index: 1;
 
-li {
-  list-style: none;
-  margin: 32px 0;
+  &__item {
+    list-style: none;
+    margin: 32px 0;
+  }
 }
 
 .item-wrap {
