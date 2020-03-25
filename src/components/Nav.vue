@@ -24,22 +24,16 @@
     <div name="nav">
       <nav class="nav" v-show="nav">
         <ul class="nav__wrap">
-          <li @click="NavMenuClose">
-            <router-link class="menu-list" to="/menu">Meny </router-link>
-            <div class="line"></div>
-          </li>
-
-          <li @click="NavMenuClose">
-            <router-link class="menu-list" to="/our-coffee"
-              >Vårt kaffe
+          <li
+            v-for="nav in navList"
+            v-bind:key="nav.name"
+            class="menu-list"
+            @click="NavMenuClose"
+          >
+            <router-link class="menu-list-link" :to="`${nav.link}`"
+              >{{ nav.name }}
             </router-link>
             <div class="line"></div>
-          </li>
-
-          <li @click="NavMenuClose">
-            <router-link class="menu-list" to="/orderstatus"
-              >Orderstatus</router-link
-            >
           </li>
         </ul>
       </nav>
@@ -51,7 +45,25 @@
 export default {
   data: () => ({
     active: false,
-    nav: false
+    nav: false,
+    navList: [
+      {
+        name: "Meny",
+        link: "/menu"
+      },
+      {
+        name: "Vårt kaffe",
+        link: "/our-coffee"
+      },
+      {
+        name: "Min profile",
+        link: "/profile"
+      },
+      {
+        name: "Orderstatus",
+        link: "/orderstatus"
+      }
+    ]
   }),
   methods: {
     NavMenuOpen() {
@@ -122,10 +134,16 @@ img {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    & li:last-of-type {
+      .line {
+        display: none;
+      }
+    }
   }
 }
 
-li {
+.menu-list {
   margin: 20px 0;
   display: flex;
   flex-direction: column;
@@ -139,7 +157,7 @@ li {
   }
 }
 
-.menu-list {
+.menu-list-link {
   color: white;
   text-decoration: none;
   font-size: 40px;
