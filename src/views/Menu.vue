@@ -1,12 +1,6 @@
 <template>
   <div class="wrap bg-color">
-    <img
-      class="bg-graphics bg-graphics__top"
-      src="@/assets/graphics/graphics-header.svg"
-      alt=""
-    />
-
-    <Nav />
+    <Header />
     <Bag />
 
     <div class="menu-wrap">
@@ -37,12 +31,12 @@
 </template>
 
 <script>
-import Nav from "@/components/Nav";
+import Header from "@/components/Header";
 import Bag from "@/components/Bag";
 
 export default {
   components: {
-    Nav,
+    Header,
     Bag
   },
   computed: {
