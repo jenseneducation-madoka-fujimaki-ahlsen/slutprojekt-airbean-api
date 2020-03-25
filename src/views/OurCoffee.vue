@@ -90,6 +90,8 @@ export default {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  width: 73px;
+  height: 73px;
 }
 
 .eva-cortado__img {
