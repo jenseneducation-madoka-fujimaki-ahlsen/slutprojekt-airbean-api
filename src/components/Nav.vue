@@ -7,7 +7,7 @@
       :class="{ 'is-active': active }"
       v-show="!active"
     >
-      <img src="@/assets/graphics/navicon.svg" alt="" />
+      <img class="nav-icon" src="@/assets/graphics/navicon.svg" alt="" />
       <div class="navicon-bg"></div>
     </div>
 
@@ -66,12 +66,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../scss/main";
 
 .nav-menu {
-  width: 100px;
-  height: 50px;
   position: absolute;
   top: 0;
   z-index: 9999;
