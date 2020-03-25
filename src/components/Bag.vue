@@ -42,7 +42,7 @@ export default {
 
   &__num {
     color: white;
-    margin-top: 2px;
+    margin-top: -2px;
     text-align: center;
   }
 }
