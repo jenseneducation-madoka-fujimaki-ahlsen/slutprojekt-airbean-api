@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     menu: [],
-    cart: []
+    cart: [],
+    order: {}
   },
   mutations: {
     persistMenu(state, data) {
