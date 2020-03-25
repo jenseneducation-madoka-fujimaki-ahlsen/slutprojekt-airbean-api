@@ -19,17 +19,21 @@
             <div class="item-price">{{ item.price }} kr</div>
             <div class="item-quantity">{{ item.quantity }}</div>
             <div class="add-quantity" @click="itemQuantity(id)">
-              <img class="arrow-up__img" src="@/assets/graphics/arrow-up.svg" alt="" />
+              <img
+                class="arrow-up__img"
+                src="@/assets/graphics/arrow-up.svg"
+                alt=""
+              />
               <div class="item-quantity"></div>
             </div>
-            <div class="cart-total">
-              <h3 class="total">Total:  kr</h3>
-              <div class="border">....................</div>
-            </div>
-            <div>inkl moms + drönarleverans</div>  
           </div>
         </li>
       </ul>
+      <div class="cart-total">
+        <h3 class="total">Total: kr</h3>
+        <div class="border">....................</div>
+      </div>
+      <div>inkl moms + drönarleverans</div>
     </div>
   </div>
 </template>
@@ -48,20 +52,21 @@ export default {
       title: "Din beställning"
     };
   },
-  methods: {
-    addToCart(item) {
-      this.$store.commit("addToCart", item);
-    },
-    itemQuantity(id) {
-      this.$store.commit("updateItem", id);
-    }
-  },
+
   computed: {
     cart() {
       return this.$store.state.cart;
     },
     totalAmount() {
       return this.$store.getters.total;
+    }
+  },
+  methods: {
+    addToCart(item) {
+      this.$store.commit("addToCart", item);
+    },
+    itemQuantity(id) {
+      this.$store.commit("updateItem", id);
     }
   }
 };
