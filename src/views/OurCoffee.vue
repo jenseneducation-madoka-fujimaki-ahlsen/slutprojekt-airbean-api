@@ -1,11 +1,6 @@
 <template>
   <div class="our-coffee bg-color">
-    <img
-      class="bg-graphics bg-graphics__top"
-      src="@/assets/graphics/graphics-header.svg"
-      alt=""
-    />
-    <Nav />
+    <Header />
     <div class="our-coffee-wrap">
       <!-- <img :src="headerImagePath" alt="graphics-header"> -->
       <!-- <img class="header__img" src="@/assets/graphics/graphics-header.svg" alt=""> -->
@@ -35,11 +30,11 @@
 </template>
 
 <script>
-import Nav from "@/components/Nav";
+import Header from "@/components/Header";
 
 export default {
   components: {
-    Nav
+    Header
   },
   name: "Background",
 

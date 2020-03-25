@@ -1,19 +1,14 @@
 <template>
   <div class="profile">
-    <Nav />
-    <img
-      class="bg-graphics bg-graphics__top"
-      src="@/assets/graphics/graphics-header.svg"
-      alt=""
-    />
+    <Header />
   </div>
 </template>
 
 <script>
-import Nav from "@/components/Nav";
+import Header from "@/components/Header";
 export default {
   components: {
-    Nav
+    Header
   }
 };
 </script>
