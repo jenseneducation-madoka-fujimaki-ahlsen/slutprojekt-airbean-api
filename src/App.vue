@@ -6,10 +6,9 @@
 
 <style lang="scss">
 #app {
+  height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-
-
-tyle>
+</style>
