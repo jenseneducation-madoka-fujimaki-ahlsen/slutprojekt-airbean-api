@@ -16,7 +16,9 @@
 export default {
   computed: {
     counter() {
-      return this.$store.state.cart.length;
+      let total = 0;
+      this.$store.state.cart.map(item => (total += item.quantity));
+      return total;
     }
   }
 };

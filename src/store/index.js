@@ -15,12 +15,17 @@ export default new Vuex.Store({
       state.menu = data;
     },
     addToCart(state, item) {
-      state.cart.push({
-        id: item.id,
-        price: item.price,
-        title: item.title,
-        quantity: 1
-      });
+      if (state.cart.find(i => i.id === item.id)) {
+        let index = state.cart.findIndex(i => i.id === item.id);
+        state.cart[index].quantity++;
+      } else {
+        state.cart.push({
+          id: item.id,
+          price: item.price,
+          title: item.title,
+          quantity: 1
+        });
+      }
     },
     removeFromCart(state, id) {
       let index = state.cart.findIndex(item => item.id === id);
