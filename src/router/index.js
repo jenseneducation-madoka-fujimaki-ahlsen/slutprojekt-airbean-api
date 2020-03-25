@@ -5,6 +5,7 @@ import Menu from "../views/Menu.vue";
 import OurCoffee from "../views/OurCoffee.vue";
 import Orderstatus from "../views/OrderStatus.vue";
 import Cart from "../views/Cart.vue";
+import Profile from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: Cart
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile
   }
 ];
 
