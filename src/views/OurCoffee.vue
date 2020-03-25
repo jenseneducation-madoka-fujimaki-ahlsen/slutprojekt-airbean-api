@@ -58,7 +58,6 @@ export default {
 @import "../scss/main";
 
 .our-coffee {
-  height: 100%;
 }
 
 .our-coffee-wrap {

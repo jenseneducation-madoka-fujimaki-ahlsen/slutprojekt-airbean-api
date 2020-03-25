@@ -14,6 +14,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../scss/main";
+
 .profile {
+  background-color: $brown;
+  height: 100%;
 }
 </style>
