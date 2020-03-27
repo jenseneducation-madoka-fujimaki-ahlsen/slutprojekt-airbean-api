@@ -117,7 +117,7 @@ export default {
     .border {
       position: absolute;
       right: 0;
-      color: $light-brown;
+      color: $lightbrown;
       opacity: 0.5;
     }
   }

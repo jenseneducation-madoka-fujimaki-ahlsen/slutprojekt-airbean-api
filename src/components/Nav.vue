@@ -150,7 +150,7 @@ img {
   align-items: center;
 
   .line {
-    border-bottom: 1px solid $light-brown;
+    border-bottom: 1px solid $lightbrown;
     width: 64px;
     margin: 25px 0 0 0;
     opacity: 0.5;
