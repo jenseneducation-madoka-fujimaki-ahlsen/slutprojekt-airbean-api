@@ -18,3 +18,16 @@
     background-color: $pink;
     width: auto;
 }
+
+.button {
+  margin: 20px auto 0;
+  width: 80%;
+  height: 56px;
+  font-size: 22px;
+  border-radius: 50px;
+}
+
+.button-black {
+  background-color: $brown;
+  color: white;
+}

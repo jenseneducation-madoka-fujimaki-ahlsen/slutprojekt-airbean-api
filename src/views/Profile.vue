@@ -1,24 +1,41 @@
 <template>
   <div class="profile">
-    <Nav />
-    <img
-      class="bg-graphics bg-graphics__top"
-      src="@/assets/graphics/graphics-header.svg"
-      alt=""
-    />
+    <Header />
+    <Register v-if="newCustomer" />
+    <History v-else />
   </div>
 </template>
 
 <script>
-import Nav from "@/components/Nav";
+import Header from "@/components/Header";
+import Register from "@/components/Register";
+import History from "@/components/History";
+
 export default {
   components: {
-    Nav
-  }
+    Header,
+    Register,
+    History
+  },
+  data: () => ({
+    newCustomer: false,
+    bigText: "Vällkommen till AirBean-familjen!",
+    smallText:
+      "Genom att skapa ett konto nedan kan du spara och se din orderhistorik."
+  })
 };
 </script>
 
 <style lang="scss">
+@import "../scss/main";
+
 .profile {
+  background-color: $brown;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 </style>
