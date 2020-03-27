@@ -27,6 +27,8 @@
       src="@/assets/graphics/graphics-footer.svg"
       alt=""
     />
+
+    <router-view />
   </div>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
   <div class="wrap">
-    <img
+    <!-- <img
       class="bg-graphics bg-graphics__top"
       src="@/assets/graphics/graphics-header.svg"
       alt=""
     />
     <Nav />
-    <Bag />
+    <Bag /> -->
     <div class="cart-wrap">
       <h1 class="title">{{ title }}</h1>
       <ul>
@@ -38,13 +38,13 @@
   </div>
 </template>
 <script>
-import Nav from "@/components/Nav";
-import Bag from "@/components/Bag";
+// import Nav from "@/components/Nav";
+// import Bag from "@/components/Bag";
 
 export default {
   components: {
-    Nav,
-    Bag
+    // Nav,
+    // Bag
   },
   name: "cart",
   data() {
@@ -73,6 +73,10 @@ export default {
 </script>
 
 <style lang="scss">
+.wrap {
+  position: absolute;
+}
+
 .cart {
   height: 100vh;
   width: 75vh;
