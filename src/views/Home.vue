@@ -27,7 +27,7 @@ export default {
   z-index: 999;
   margin: auto;
   display: grid;
-  position: fixed;
+  //position: fixed;
   width: 100%;
   grid-template-columns: 46% 8% 46%;
   grid-template-areas: "left-img center-img right-img";
