@@ -1,17 +1,21 @@
 <template>
   <div class="status">
     <div class="status-wrap">
-      <div class="ordernumber">
+      <div class="ordernumber" v-if="!loading">
         <p>Ordernummer {{ order.orderNumber }}</p>
         <p></p>
       </div>
 
-      <div class="drone">
+      <div class="drone" v-if="!loading">
         <img class="drone__img" src="@/assets/graphics/drone.svg" alt />
       </div>
-      <div class="order">
+      <div class="order" v-if="!loading">
         <h1>Din beställning är på väg!</h1>
         <p>{{ order.eta }} minuter</p>
+      </div>
+      <div class="loading-icon" v-if="loading">
+        <img src="@/assets/graphics/loader.png" alt="" />
+        <p class="text">Ditt kaffe bryggs...</p>
       </div>
       <router-link type="submit" class="submit" to="/menu"
         >Ok, cool!</router-link
@@ -26,6 +30,9 @@ export default {
   computed: {
     order() {
       return this.$store.state.order;
+    },
+    loading() {
+      return this.$store.state.loading;
     }
   },
   mounted() {}
@@ -39,13 +46,25 @@ export default {
   height: 100%;
 }
 .status-wrap {
-  margin-bottom: -80px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-color: $orange;
   min-height: 100%;
   margin: 0;
+
+  .loading-icon {
+    margin: 200px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      color: $white;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
 
   .ordernumber {
     margin-top: 80px;
@@ -125,11 +144,14 @@ export default {
       line-height: 50px;
       margin-bottom: 20px;
     }
+
+    p {
+      font-size: 20px;
+    }
   }
 
   h1 {
     font-size: 35px;
-    font-style: PT Serif;
   }
 }
 </style>
