@@ -2,7 +2,7 @@
   <div class="nav-menu" :class="{ 'nav-menu-open': active }">
     <div class="nav-menu__bg" v-show="active"></div>
     <div
-      @click="NavMenuOpen"
+      @click="navMenuOpen"
       class="hamburger-menu-wrap"
       :class="{ 'is-active': active }"
       v-show="!active"
@@ -12,7 +12,7 @@
     </div>
 
     <div
-      @click="NavMenuClose"
+      @click="navMenuClose"
       class="hamburger-menu-wrap"
       :class="{ 'is-active': !active }"
       v-show="active"
@@ -28,7 +28,7 @@
             v-for="nav in navList"
             v-bind:key="nav.name"
             class="menu-list"
-            @click="NavMenuClose"
+            @click="navMenuClose"
           >
             <router-link class="menu-list-link" :to="`${nav.link}`"
               >{{ nav.name }}
@@ -66,11 +66,11 @@ export default {
     ]
   }),
   methods: {
-    NavMenuOpen() {
+    navMenuOpen() {
       this.active = !this.active;
       this.nav = !this.nav;
     },
-    NavMenuClose() {
+    navMenuClose() {
       this.active = false;
       this.nav = false;
     }
@@ -135,7 +135,7 @@ img {
     margin: 0;
     padding: 0;
 
-    & li:last-of-type {
+    li:last-of-type {
       .line {
         display: none;
       }
@@ -150,7 +150,7 @@ img {
   align-items: center;
 
   .line {
-    border-bottom: 1px solid $light-brown;
+    border-bottom: 1px solid $lightbrown;
     width: 64px;
     margin: 25px 0 0 0;
     opacity: 0.5;
