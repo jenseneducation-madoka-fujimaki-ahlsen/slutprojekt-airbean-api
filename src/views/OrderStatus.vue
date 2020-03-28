@@ -67,6 +67,18 @@ export default {
       margin-top: 0;
       margin-left: auto;
       margin-right: auto;
+
+      position: relative;
+      animation: bound-y 0.5s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes bound-y {
+      0% {
+        bottom: -10px;
+      }
+      100% {
+        bottom: 10px;
+      }
     }
   }
   .submit {
