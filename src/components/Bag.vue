@@ -2,7 +2,7 @@
   <div class="bag">
     <router-link class="ico-bag__wrap" to="/cart">
       <div class="counter">
-        <p class="counter__num">{{ counter }}</p>
+        <p class="counter__num pt">{{ counter }}</p>
       </div>
       <div class="ico-bag__wrap">
         <img class="ico-bag__img" src="@/assets/graphics/bag.svg" alt="" />
@@ -44,8 +44,9 @@ export default {
 
   &__num {
     color: white;
-    margin-top: -2px;
+    margin-top: 1px;
     text-align: center;
+    font-size: 12px;
   }
 }
 
@@ -63,7 +64,7 @@ export default {
   &__bg {
     width: 60px;
     height: 60px;
-    background-color: black;
+    background-color: $brown;
     border-radius: 50%;
   }
 }

@@ -1,7 +1,7 @@
 <template>
-  <div class="wrap bg-color">
+  <div class="menu bg-color">
     <Header />
-    <Bag />
+    <Bag v-on:click.native="activeCart" :class="{ 'cart-open': active }" />
 
     <div class="menu-wrap">
       <h1 class="title">Meny</h1>
@@ -28,6 +28,12 @@
       alt=""
     />
 
+    <div
+      class="modal-bg"
+      @click="closeCart"
+      v-if="$route.matched.some(({ name }) => name === 'Cart')"
+    ></div>
+
     <router-view />
   </div>
 </template>
@@ -41,6 +47,9 @@ export default {
     Header,
     Bag
   },
+  data: () => ({
+    active: false
+  }),
   computed: {
     menu() {
       return this.$store.state.menu;
@@ -51,7 +60,15 @@ export default {
   },
   methods: {
     addItem(item) {
+      //this.isAddClicked = true;
       this.$store.dispatch("addItem", item);
+    },
+    activeCart() {
+      this.active = true;
+    },
+    closeCart() {
+      this.active = false;
+      this.$router.push({ path: "/menu" });
     }
   }
 };
@@ -60,9 +77,23 @@ export default {
 <style lang="scss">
 @import "../scss/main";
 
-.wrap {
+.menu {
   color: $brown;
   min-height: 100%;
+  position: relative;
+}
+
+.cart-open {
+  z-index: 999999;
+}
+
+.modal-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 99999;
 }
 
 .menu-wrap {
@@ -101,6 +132,10 @@ export default {
       height: 16px;
       position: absolute;
       margin: 8px auto auto 8px;
+
+      &:active {
+        transform: scale(0.5);
+      }
     }
     &__icon-bg {
       width: 32px;
