@@ -10,4 +10,10 @@ async function fetchMenu() {
   return data;
 }
 
-export { fetchMenu };
+async function fetchOrder() {
+  const response = await api.post("/beans");
+  const data = response.data;
+  return data;
+}
+
+export { fetchMenu, fetchOrder };

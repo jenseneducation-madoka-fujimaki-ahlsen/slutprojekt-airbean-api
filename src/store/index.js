@@ -8,11 +8,21 @@ export default new Vuex.Store({
   state: {
     menu: [],
     cart: [],
-    order: {}
+    order: {
+      orderNumber: "",
+      timeStamp: new Date(null),
+      items: [],
+      totalValue: 0
+    }
   },
   mutations: {
     persistMenu(state, data) {
       state.menu = data;
+    },
+    persistOrder(state, data) {
+      state.order.eta = data.eta;
+      state.order.orderNumber = data.orderNr;
+      state.order.items = state.cart;
     },
     addToCart(state, item) {
       if (state.cart.find(i => i.id === item.id)) {
@@ -31,9 +41,16 @@ export default new Vuex.Store({
       let index = state.cart.findIndex(item => item.id === id);
       state.cart.splice(index, 1);
     },
-    updateItem(state, id) {
+    addQuantity(state, id) {
       let index = state.cart.findIndex(item => item.id === id);
       state.cart[index].quantity++;
+    },
+    removeQuantity(state, id) {
+      let index = state.cart.findIndex(item => item.id === id);
+      state.cart[index].quantity--;
+      if (state.cart[index].quantity == 0) {
+        state.cart.splice(index, 1);
+      }
     }
   },
   actions: {
@@ -42,6 +59,10 @@ export default new Vuex.Store({
       context.commit("persistMenu", data);
       // return true;
     },
+    async postOrder(context) {
+      const data = await API.fetchOrder();
+      context.commit("persistOrder", data);
+    },
     addItem(context, item) {
       context.commit("addToCart", item);
     }
@@ -49,13 +70,25 @@ export default new Vuex.Store({
   getters: {
     total: state => {
       if (state.cart.length > 0) {
-        return state.cart
-          .map(item => item.price)
-          .reduce((total, amount) => total + amount);
+        state.order.totalValue = 0;
+        state.cart.forEach(item => {
+          state.order.totalValue += item.price * item.quantity;
+        });
+        return state.order.totalValue;
       } else {
         return 0;
       }
     }
+
+    // total: state => {
+    //   if (state.cart.length > 0) {
+    //     return state.cart
+    //       .map(item => item.price)
+    //       .reduce((total, amount) => total + amount);
+    //   } else {
+    //     return 0;
+    //   }
+    // }
   },
 
   modules: {}
