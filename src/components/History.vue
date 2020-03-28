@@ -34,6 +34,7 @@ export default {
   data: () => ({
     name: "Sixten Kaffelövér",
     email: "sixten.kaffelover@zocom.se",
+
     history: [
       {
         orderNumber: "#AB1123282323Z",
