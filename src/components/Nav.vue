@@ -43,6 +43,19 @@
 
 <script>
 export default {
+  computed: {
+    order() {
+      return this.$store.state.order;
+    }
+  },
+  mounted() {
+    if (this.order.items.length !== 0) {
+      this.navList.push({
+        name: "Orderstatus",
+        link: "/orderstatus"
+      });
+    }
+  },
   data: () => ({
     active: false,
     nav: false,
@@ -58,11 +71,11 @@ export default {
       {
         name: "Min profile",
         link: "/profile"
-      },
-      {
-        name: "Orderstatus",
-        link: "/orderstatus"
       }
+      // {
+      //   name: "Orderstatus",
+      //   link: "/orderstatus"
+      // }
     ]
   }),
   methods: {

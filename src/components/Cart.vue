@@ -87,6 +87,7 @@ export default {
     },
     checkOrder() {
       if (this.$store.state.cart.length !== 0) {
+        this.$store.dispatch("order");
         this.$store.state.cart = [];
         this.$router.push({ path: "/orderStatus" });
       }

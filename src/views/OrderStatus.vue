@@ -28,9 +28,7 @@ export default {
       return this.$store.state.order;
     }
   },
-  mounted() {
-    this.$store.dispatch("order");
-  }
+  mounted() {}
 };
 </script>
 
