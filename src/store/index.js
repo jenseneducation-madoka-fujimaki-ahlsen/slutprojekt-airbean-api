@@ -8,11 +8,23 @@ export default new Vuex.Store({
   state: {
     menu: [],
     cart: [],
-    order: {}
+    order: {
+      orderNumber: "",
+      timeStamp: Date.now(),
+      items: [],
+      totalValue: 0
+    },
+    loading: false
   },
   mutations: {
     persistMenu(state, data) {
       state.menu = data;
+    },
+    postThisOrder(state, data) {
+      state.order.eta = data.eta;
+      state.order.orderNumber = data.orderNr;
+      state.order.items = state.cart;
+      state.loading = false;
     },
     addToCart(state, item) {
       if (state.cart.find(i => i.id === item.id)) {
@@ -27,13 +39,23 @@ export default new Vuex.Store({
         });
       }
     },
+    emptyCart(state) {
+      state.cart = [];
+    },
     removeFromCart(state, id) {
       let index = state.cart.findIndex(item => item.id === id);
       state.cart.splice(index, 1);
     },
-    updateItem(state, id) {
+    addQuantity(state, id) {
       let index = state.cart.findIndex(item => item.id === id);
       state.cart[index].quantity++;
+    },
+    removeQuantity(state, id) {
+      let index = state.cart.findIndex(item => item.id === id);
+      state.cart[index].quantity--;
+      if (state.cart[index].quantity == 0) {
+        state.cart.splice(index, 1);
+      }
     }
   },
   actions: {
@@ -42,20 +64,40 @@ export default new Vuex.Store({
       context.commit("persistMenu", data);
       // return true;
     },
+    async postOrder(context) {
+      this.state.loading = true;
+      const data = await API.fetchOrder();
+      context.commit("postThisOrder", data);
+    },
     addItem(context, item) {
       context.commit("addToCart", item);
+    },
+    clearCart(context) {
+      context.commit("emptyCart");
     }
   },
   getters: {
     total: state => {
       if (state.cart.length > 0) {
-        return state.cart
-          .map(item => item.price)
-          .reduce((total, amount) => total + amount);
+        state.order.totalValue = 0;
+        state.cart.forEach(item => {
+          state.order.totalValue += item.price * item.quantity;
+        });
+        return state.order.totalValue;
       } else {
         return 0;
       }
     }
+
+    // total: state => {
+    //   if (state.cart.length > 0) {
+    //     return state.cart
+    //       .map(item => item.price)
+    //       .reduce((total, amount) => total + amount);
+    //   } else {
+    //     return 0;
+    //   }
+    // }
   },
 
   modules: {}

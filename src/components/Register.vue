@@ -95,7 +95,7 @@ export default {
       position: absolute;
       width: 30px;
       height: 30px;
-      background: $light-brown;
+      background: $lightbrown;
       opacity: 0.2;
       border-radius: 50%;
     }
