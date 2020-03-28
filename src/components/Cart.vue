@@ -52,7 +52,7 @@
         <p class="total-des">inkl moms + drönarleverans</p>
       </div>
       <button v-on:click="checkOrder" class="button button-black cartr-button">
-        Take my money!
+        {{ buttonTxt }}
       </button>
     </div>
   </div>
@@ -63,7 +63,8 @@ export default {
   name: "cart",
   data() {
     return {
-      title: "Din beställning"
+      title: "Din beställning",
+      buttonTxt: "Take my money!"
     };
   },
 
@@ -85,9 +86,12 @@ export default {
     removeQuantity(id) {
       this.$store.commit("removeQuantity", id);
     },
-    checkOrder() {
+    async checkOrder() {
       if (this.$store.state.cart.length !== 0) {
+        this.buttonTxt = "Loading ...";
+        await this.$store.dispatch("postOrder");
         this.$store.state.cart = [];
+        this.buttonTxt = "Take my money!";
         this.$router.push({ path: "/orderStatus" });
       }
     }

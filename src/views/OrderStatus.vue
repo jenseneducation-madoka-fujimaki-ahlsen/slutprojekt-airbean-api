@@ -2,7 +2,7 @@
   <div class="status">
     <div class="status-wrap">
       <div class="ordernumber">
-        <p>Ordernummer{{ order.orderNumber }}</p>
+        <p>Ordernummer {{ order.orderNumber }}</p>
         <p></p>
       </div>
 
@@ -28,9 +28,7 @@ export default {
       return this.$store.state.order;
     }
   },
-  mounted() {
-    this.$store.dispatch("order");
-  }
+  mounted() {}
 };
 </script>
 
@@ -59,7 +57,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 20px;
+    margin-top: 50px;
 
     &__img {
       width: 180px;
@@ -67,6 +65,18 @@ export default {
       margin-top: 0;
       margin-left: auto;
       margin-right: auto;
+
+      position: relative;
+      animation: bound-y 0.5s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes bound-y {
+      0% {
+        bottom: -10px;
+      }
+      100% {
+        bottom: 10px;
+      }
     }
   }
   .submit {
@@ -105,11 +115,16 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 100px;
     color: white;
     padding-right: 30px;
     padding-left: 30px;
     text-align: center;
+
+    h1 {
+      line-height: 50px;
+      margin-bottom: 20px;
+    }
   }
 
   h1 {

@@ -19,6 +19,11 @@ export default new Vuex.Store({
     persistMenu(state, data) {
       state.menu = data;
     },
+    persistOrder(state, data) {
+      state.order.eta = data.eta;
+      state.order.orderNumber = data.orderNr;
+      state.order.items = state.cart;
+    },
     addToCart(state, item) {
       if (state.cart.find(i => i.id === item.id)) {
         let index = state.cart.findIndex(i => i.id === item.id);
@@ -46,9 +51,6 @@ export default new Vuex.Store({
       if (state.cart[index].quantity == 0) {
         state.cart.splice(index, 1);
       }
-    },
-    orderThis(state) {
-      state.order.items = state.cart;
     }
   },
   actions: {
@@ -57,11 +59,12 @@ export default new Vuex.Store({
       context.commit("persistMenu", data);
       // return true;
     },
+    async postOrder(context) {
+      const data = await API.fetchOrder();
+      context.commit("persistOrder", data);
+    },
     addItem(context, item) {
       context.commit("addToCart", item);
-    },
-    order(context) {
-      context.commit("orderThis");
     }
   },
   getters: {
