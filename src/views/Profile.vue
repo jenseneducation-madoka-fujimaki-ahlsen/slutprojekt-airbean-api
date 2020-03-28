@@ -18,11 +18,18 @@ export default {
     History
   },
   data: () => ({
-    newCustomer: false,
+    newCustomer: true,
     bigText: "Vällkommen till AirBean-familjen!",
     smallText:
       "Genom att skapa ett konto nedan kan du spara och se din orderhistorik."
-  })
+  }),
+  created() {
+    let name = localStorage.getItem("LogInName");
+    let epost = localStorage.getItem("LogInEpost");
+    if (name && epost) {
+      this.newCustomer = false; //visar History sidan
+    }
+  }
 };
 </script>
 

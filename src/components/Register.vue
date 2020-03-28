@@ -2,25 +2,33 @@
   <div class="register">
     <div class="logo-wrap">
       <div class="logo-bg"></div>
-      <img class="logo-img" src="@/assets/graphics/logo.svg" alt="" />
+      <img class="logo-img" src="@/assets/graphics/logo.svg" alt />
     </div>
     <h1 class="title">{{ bigText }}</h1>
     <p class="text">{{ smallText }}</p>
     <div class="form">
       <label for="name" class="label text">Namn</label>
-      <input type="text" class="input input-name" />
+      <input type="text" class="input input-name" v-model="name" />
       <label for="epost" class="label-epost text">Epost</label>
-      <input type="text" class="input input-epost" />
+      <input type="text" class="input input-epost" v-model="epost" />
 
       <div class="checkbox-wrap">
         <div class="ckeckbox">
-          <input id="checkbox1" name="checkbox" type="checkbox" value="value" />
+          <input
+            id="checkbox1"
+            name="checkbox"
+            type="checkbox"
+            value="value"
+            v-on:click="addConsent"
+          />
           <label for="checkbox1" class="gdpr-text text"></label>
         </div>
-        <p class="text">GDPR Ok!</p>
+        <p class="text" v-on:click="addConsent">GDPR Ok!</p>
       </div>
 
-      <button class="button button-black">Brew me a cup!</button>
+      <button class="button button-black" v-on:click="submit">
+        Brew me a cup!
+      </button>
     </div>
   </div>
 </template>
@@ -28,11 +36,29 @@
 <script>
 export default {
   components: {},
+
   data: () => ({
     bigText: "Vällkommen till AirBean-familjen!",
     smallText:
-      "Genom att skapa ett konto nedan kan du spara och se din orderhistorik."
-  })
+      "Genom att skapa ett konto nedan kan du spara och se din orderhistorik.",
+    name: "",
+    epost: "",
+    consent: false
+  }),
+
+  methods: {
+    submit() {
+      if (this.name !== "" && this.epost !== "") {
+        localStorage.setItem("LogInName", JSON.stringify(this.name));
+        localStorage.setItem("LogInEpost", JSON.stringify(this.epost));
+        this.$router.push("/menu");
+      }
+    },
+    addConsent() {
+      this.consent = true;
+      localStorage.setItem("cookie-consent", JSON.stringify(this.consent));
+    }
+  }
 };
 </script>
 
