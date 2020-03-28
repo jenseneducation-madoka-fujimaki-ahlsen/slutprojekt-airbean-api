@@ -2,7 +2,7 @@
   <div class="status">
     <div class="status-wrap">
       <div class="ordernumber">
-        <p>Ordernummer{{ order.orderNumber }}</p>
+        <p>Ordernummer {{ order.orderNumber }}</p>
         <p></p>
       </div>
 
@@ -57,7 +57,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 20px;
+    margin-top: 50px;
 
     &__img {
       width: 180px;
@@ -115,11 +115,16 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 100px;
     color: white;
     padding-right: 30px;
     padding-left: 30px;
     text-align: center;
+
+    h1 {
+      line-height: 50px;
+      margin-bottom: 20px;
+    }
   }
 
   h1 {
