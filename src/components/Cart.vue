@@ -39,7 +39,7 @@
               </div>
             </div>
 
-            <div class="item-price">{{ item.price }} kr</div>
+            <div class="item-price">{{ item.price * item.quantity }} kr</div>
           </div>
         </li>
       </ul>
@@ -88,11 +88,9 @@ export default {
     },
     async checkOrder() {
       if (this.$store.state.cart.length !== 0) {
-        this.buttonTxt = "Loading ...";
-        await this.$store.dispatch("postOrder");
-        this.$store.state.cart = [];
-        this.buttonTxt = "Take my money!";
         this.$router.push({ path: "/orderStatus" });
+        await this.$store.dispatch("postOrder");
+        this.$store.dispatch("clearCart");
       }
     }
   }

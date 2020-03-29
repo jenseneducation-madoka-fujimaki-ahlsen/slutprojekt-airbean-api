@@ -10,19 +10,21 @@ export default new Vuex.Store({
     cart: [],
     order: {
       orderNumber: "",
-      timeStamp: new Date(null),
+      timeStamp: Date.now(),
       items: [],
       totalValue: 0
-    }
+    },
+    loading: false
   },
   mutations: {
     persistMenu(state, data) {
       state.menu = data;
     },
-    persistOrder(state, data) {
+    postThisOrder(state, data) {
       state.order.eta = data.eta;
       state.order.orderNumber = data.orderNr;
       state.order.items = state.cart;
+      state.loading = false;
     },
     addToCart(state, item) {
       if (state.cart.find(i => i.id === item.id)) {
@@ -36,6 +38,9 @@ export default new Vuex.Store({
           quantity: 1
         });
       }
+    },
+    emptyCart(state) {
+      state.cart = [];
     },
     removeFromCart(state, id) {
       let index = state.cart.findIndex(item => item.id === id);
@@ -60,11 +65,15 @@ export default new Vuex.Store({
       // return true;
     },
     async postOrder(context) {
+      this.state.loading = true;
       const data = await API.fetchOrder();
-      context.commit("persistOrder", data);
+      context.commit("postThisOrder", data);
     },
     addItem(context, item) {
       context.commit("addToCart", item);
+    },
+    clearCart(context) {
+      context.commit("emptyCart");
     }
   },
   getters: {
