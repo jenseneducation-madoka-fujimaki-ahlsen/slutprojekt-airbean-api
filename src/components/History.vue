@@ -37,10 +37,14 @@ export default {
 
     history: [
       {
-        orderNumber: "#AB1123282323Z",
+        orderNumber: "",
+        timeStamp: Date.now(),
+        items: [],
+        totalValue: 0
+        /*  orderNumber: "#AB1123282323Z",
         timeStamp: 20200303,
         Items: [],
-        totalValue: 5555
+        totalValue: 5555 */
       },
       {
         orderNumber: "#AB11232823233",

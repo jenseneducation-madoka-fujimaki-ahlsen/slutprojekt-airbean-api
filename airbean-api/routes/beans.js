@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
 
   db.get("orders")
     .push({
-      orderNumber: order.orderNr,
+      orderNumber: order.orderNumber,
       timeStamp: Date.now(),
       Items: req.body.items, //take from cart
       totalValue: req.body.value //take from cart

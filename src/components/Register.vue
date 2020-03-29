@@ -58,6 +58,11 @@ export default {
       this.consent = true;
       localStorage.setItem("cookie-consent", JSON.stringify(this.consent));
     }
+  },
+  computed: {
+    order() {
+      return this.$store.state.order;
+    }
   }
 };
 </script>
