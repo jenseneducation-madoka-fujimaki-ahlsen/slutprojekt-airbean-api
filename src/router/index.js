@@ -23,7 +23,7 @@ const routes = [
     children: [{ path: "/cart", component: Cart, name: "Cart" }]
   },
   {
-    path: "/our-coffee",
+    path: "/ourcoffee",
     name: "OurCoffee",
     component: OurCoffee
   },
