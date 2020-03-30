@@ -66,7 +66,7 @@ export default {
       },
       {
         name: "Vårt kaffe",
-        link: "/our-coffee"
+        link: "/ourcoffee"
       },
       {
         name: "Min profile",
