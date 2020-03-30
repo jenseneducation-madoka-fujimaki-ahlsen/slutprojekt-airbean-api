@@ -41,7 +41,6 @@
 <script>
 import Header from "@/components/Header";
 import Bag from "@/components/Bag";
-
 export default {
   components: {
     Header,
@@ -60,7 +59,6 @@ export default {
   },
   methods: {
     addItem(item) {
-      //this.isAddClicked = true;
       this.$store.dispatch("addItem", item);
     },
     activeCart() {
@@ -76,17 +74,14 @@ export default {
 
 <style lang="scss">
 @import "../scss/main";
-
 .menu {
   color: $brown;
   min-height: 100%;
   position: relative;
 }
-
 .cart-open {
   z-index: 999999;
 }
-
 .modal-bg {
   position: absolute;
   height: 100%;
@@ -95,7 +90,6 @@ export default {
   top: 0;
   z-index: 99999;
 }
-
 .menu-wrap {
   display: flex;
   flex-direction: column;
@@ -103,36 +97,30 @@ export default {
   align-items: center;
   margin-bottom: 10px;
 }
-
 .menu-list {
   margin: 0;
   padding: 0;
   z-index: 1;
-
   &__item {
     list-style: none;
     margin: 32px 0;
   }
 }
-
 .item-wrap {
   display: grid;
   grid-template-columns: 1fr 10fr 4fr;
   grid-template-rows: repeat(2, auto);
   text-align: left;
-
   .add {
     grid-area: 1 / 1 / 3 / 2;
     position: relative;
     display: flex;
     margin: 6px 16px 0 0;
-
     &__img {
       width: 16px;
       height: 16px;
       position: absolute;
       margin: 8px auto auto 8px;
-
       &:active {
         transform: scale(0.5);
       }
@@ -144,13 +132,11 @@ export default {
       background-color: $brown;
     }
   }
-
   .item-title {
     font-size: 20px;
     grid-area: 1 / 2 / 2 / 2;
     display: flex;
     position: relative;
-
     .border {
       position: absolute;
       right: 0;
@@ -158,19 +144,16 @@ export default {
       opacity: 0.5;
     }
   }
-
   .item-price {
     font-size: 20px;
     grid-area: 1 / 3 / 2 / 4;
     margin-left: 20px;
   }
-
   .item-desc {
     grid-area: 2 / 2 / 3 / 4;
     font-size: 12px;
   }
 }
-
 .title-wrap {
   font-size: 24px;
   display: flex;
