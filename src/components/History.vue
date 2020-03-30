@@ -11,7 +11,7 @@
         <li v-for="item in history" :key="item.orderNumber">
           <div>
             <p class="orderNumber">{{ item.orderNumber }}</p>
-            <p>{{ item.timeStamp }}</p>
+            <p>{{ dateStamp(item.timeStamp) }}</p>
           </div>
           <div>
             <p>total ordersumma</p>
@@ -52,7 +52,17 @@ export default {
       }
     }
   },
-  methods: {}
+  methods: {
+    dateStamp() {
+      return (
+        new Date().getFullYear() +
+        "/" +
+        (new Date().getMonth() + 1) +
+        "/" +
+        new Date().getDate()
+      );
+    }
+  }
 };
 </script>
 

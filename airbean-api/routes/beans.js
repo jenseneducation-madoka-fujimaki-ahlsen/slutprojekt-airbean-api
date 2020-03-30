@@ -3,7 +3,11 @@ const router = new Router();
 const fs = require("fs");
 const uuid = require("uuid-random");
 const { generateOrderNr, generateETA } = require("../utils/utils");
-const db = require("../module/database");
+//added lowdb
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
+const adapter = new FileSync("db.json");
+const db = low(adapter);
 
 router.get("/", async (req, res) => {
   const menu = fs.createReadStream("data/menu.json");
@@ -13,33 +17,19 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const order = {
     eta: generateETA(),
-    orderNumber: generateOrderNr(),
-    timeStamp: Date.now(),
-    items: req.body.items, //take from cart
-    totalValue: req.body.totalValue //take from cart
+    orderNr: generateOrderNr()
   };
 
-  setTimeout(async () => {
-    if (
-      await db
-        .get("users")
-        .some(u => u.id === req.body.key)
-        .value()
-    ) {
-      await db
-        .get("users")
-        .find({ id: req.body.key })
-        .get("orders")
-        .push(order)
-        .write();
-    } else {
-      const key = req.body.key;
-      await db
-        .get("users")
-        .push({ id: key, orders: [order] })
-        .write();
-    }
+  db.get("orders")
+    .push({
+      orderNumber: order.orderNumber,
+      timeStamp: Date.now(),
+      Items: req.body.items, //take from cart
+      totalValue: req.body.value //take from cart
+    })
+    .write();
 
+  setTimeout(() => {
     res.send(order);
   }, 2000);
 });
@@ -49,16 +39,6 @@ router.get("/key", (req, res) => {
     key: uuid()
   };
   res.send(JSON.stringify(key));
-});
-
-router.get("/profile/:uuid", (req, res) => {
-  const id = req.params.uuid;
-  res.send(
-    db
-      .get("users")
-      .find({ id: id })
-      .value()
-  );
 });
 
 module.exports = router;
