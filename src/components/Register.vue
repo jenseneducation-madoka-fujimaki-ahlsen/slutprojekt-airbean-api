@@ -48,11 +48,11 @@ export default {
 
   methods: {
     async submit() {
-      if (this.name !== "" && this.epost !== "") {
+      if (this.name !== "" && this.epost !== "" && this.consent == true) {
         let user = {
           name: this.name,
-          epost: this.epost,
-          consent: this.consent
+          epost: this.epost
+          // consent: this.consent
         };
         await this.$store.dispatch("submitForm", user);
         this.$router.go();
