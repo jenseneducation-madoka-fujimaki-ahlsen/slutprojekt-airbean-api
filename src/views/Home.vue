@@ -1,5 +1,4 @@
-
- <template>
+<template>
   <div class="home">
     <img class="left-img" src="@/assets/graphics/intro-graphic-left.svg" alt />
     <router-link class="center" to="/Menu">
@@ -10,8 +9,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: "Home",
   components: {}
@@ -20,19 +17,16 @@ export default {
 
 <style lang="scss">
 @import "../scss/main";
-
 .home {
   height: 100%;
   background-color: $green;
   z-index: 999;
   margin: auto;
   display: grid;
-  //position: fixed;
   width: 100%;
   grid-template-columns: 46% 8% 46%;
   grid-template-areas: "left-img center-img right-img";
 }
-
 .left-img {
   width: 100%;
   height: 100%;
@@ -41,7 +35,6 @@ export default {
   margin-left: 0px;
   margin-top: 0px;
 }
-
 .right-img {
   width: 100%;
   height: 100%;
