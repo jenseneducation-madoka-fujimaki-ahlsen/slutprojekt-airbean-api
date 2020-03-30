@@ -47,16 +47,29 @@ export default {
   }),
 
   methods: {
-    submit() {
-      if (this.name !== "" && this.epost !== "") {
-        localStorage.setItem("LogInName", JSON.stringify(this.name));
-        localStorage.setItem("LogInEpost", JSON.stringify(this.epost));
-        this.$router.push("/menu");
+    async submit() {
+      if (this.name !== "" && this.epost !== "" && this.consent == true) {
+        let user = {
+          name: this.name,
+          epost: this.epost
+          // consent: this.consent
+        };
+        await this.$store.dispatch("submitForm", user);
+        this.$router.go();
       }
     },
     addConsent() {
-      this.consent = true;
-      localStorage.setItem("cookie-consent", JSON.stringify(this.consent));
+      if (this.consent == true) {
+        this.consent == false;
+      } else {
+        this.consent = true;
+      }
+      // localStorage.setItem("cookie-consent", JSON.stringify(this.consent));
+    }
+  },
+  computed: {
+    order() {
+      return this.$store.state.order;
     }
   }
 };

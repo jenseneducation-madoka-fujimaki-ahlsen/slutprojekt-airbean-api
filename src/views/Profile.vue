@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <Header />
-    <Register v-if="newCustomer" />
+    <Register v-if="newUser" />
     <History v-else />
   </div>
 </template>
@@ -17,19 +17,36 @@ export default {
     Register,
     History
   },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+    newUser() {
+      return this.$store.state.newUser;
+    }
+  },
   data: () => ({
-    newCustomer: true,
     bigText: "Vällkommen till AirBean-familjen!",
     smallText:
       "Genom att skapa ett konto nedan kan du spara och se din orderhistorik."
   }),
+
   created() {
-    let name = localStorage.getItem("LogInName");
-    let epost = localStorage.getItem("LogInEpost");
-    if (name && epost) {
-      this.newCustomer = false; //visar History sidan
-    }
-  }
+    this.$store.dispatch("checkUser");
+
+    // if (this.user !== null) {
+    //   this.newUser = false;
+    // } else {
+    //   this.newUser = true;
+    // }
+
+    // let name = localStorage.getItem("LogInName");
+    // let epost = localStorage.getItem("LogInEpost");
+    // if (name && epost) {
+    //   this.newCustomer = false; //visar History sidan
+    // }
+  },
+  mounted() {}
 };
 </script>
 
