@@ -5,7 +5,6 @@
         <p>Ordernummer {{ order.orderNumber }}</p>
         <p></p>
       </div>
-
       <div class="drone" v-if="!loading">
         <img class="drone__img" src="@/assets/graphics/drone.svg" alt />
       </div>
@@ -41,7 +40,6 @@ export default {
 
 <style lang="scss">
 @import "../scss/main";
-
 .status {
   height: 100%;
 }
@@ -52,43 +50,36 @@ export default {
   background-color: $orange;
   min-height: 100%;
   margin: 0;
-
   .loading-icon {
     margin: 200px 0 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     p {
       color: $white;
       margin-top: 20px;
       text-align: center;
     }
   }
-
   .ordernumber {
     margin-top: 80px;
     text-align: center;
     color: rgb(221, 201, 163);
   }
-
   .drone {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     margin-top: 50px;
-
     &__img {
       width: 180px;
       height: 100px;
       margin-top: 0;
       margin-left: auto;
       margin-right: auto;
-
       position: relative;
       animation: bound-y 0.5s ease-in-out infinite alternate-reverse;
     }
-
     @keyframes bound-y {
       0% {
         bottom: -10px;
@@ -99,16 +90,6 @@ export default {
     }
   }
   .submit {
-    // width: 7rem;
-    // height: 2rem;
-    // border-radius: 99rem;
-    // appearance: none;
-    // border: none;
-    // font-size: 1rem;
-    // border-radius: 99rem;
-    // margin: 1rem 0;
-    // font-weight: bold;
-    // margin: auto;
     background: $white;
     color: $black;
     margin: 60px auto 30px;
@@ -120,11 +101,9 @@ export default {
     width: 50%;
     text-decoration: none;
     padding: 6px;
-
     &:focus {
       outline: none;
     }
-
     &:active {
       background: lightGrey;
     }
@@ -139,17 +118,14 @@ export default {
     padding-right: 30px;
     padding-left: 30px;
     text-align: center;
-
     h1 {
       line-height: 50px;
       margin-bottom: 20px;
     }
-
     p {
       font-size: 20px;
     }
   }
-
   h1 {
     font-size: 35px;
   }
