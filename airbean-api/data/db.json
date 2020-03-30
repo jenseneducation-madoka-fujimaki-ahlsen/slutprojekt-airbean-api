@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "id": "a9d77261-9771-45a5-8e67-d6e85df73515",
+      "orders": [
+        {
+          "eta": 22,
+          "orderNumber": "AB1585526041578Z",
+          "timeStamp": 1585526041578,
+          "items": [
+            {
+              "id": 1,
+              "price": 39,
+              "title": "Bryggkaffe",
+              "quantity": 1
+            }
+          ],
+          "totalValue": 39
+        },
+        {
+          "eta": 11,
+          "orderNumber": "AB1585526481255X",
+          "timeStamp": 1585526481255,
+          "items": [
+            {
+              "id": 1,
+              "price": 39,
+              "title": "Bryggkaffe",
+              "quantity": 4
+            },
+            {
+              "id": 3,
+              "price": 49,
+              "title": "Cappuccino",
+              "quantity": 1
+            }
+          ],
+          "totalValue": 205
+        },
+        {
+          "eta": 16,
+          "orderNumber": "AB1585527101772Y",
+          "timeStamp": 1585527101772,
+          "items": [
+            {
+              "id": 3,
+              "price": 49,
+              "title": "Cappuccino",
+              "quantity": 1
+            }
+          ],
+          "totalValue": 49
+        }
+      ]
+    },
+    {
+      "id": "37f73c22-90d9-4648-a6c1-168ea7487059",
+      "orders": [
+        {
+          "eta": 19,
+          "orderNumber": "AB1585531481584X",
+          "timeStamp": 1585531481584,
+          "items": [
+            {
+              "id": 1,
+              "price": 39,
+              "title": "Bryggkaffe",
+              "quantity": 1
+            }
+          ],
+          "totalValue": 39
+        },
+        {
+          "eta": 19,
+          "orderNumber": "AB1585531535175Y",
+          "timeStamp": 1585531535175,
+          "items": [
+            {
+              "id": 2,
+              "price": 49,
+              "title": "Caffè Doppio",
+              "quantity": 2
+            }
+          ],
+          "totalValue": 98
+        }
+      ]
+    }
+  ]
+}

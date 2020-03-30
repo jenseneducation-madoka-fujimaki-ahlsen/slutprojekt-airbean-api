@@ -8,23 +8,27 @@ export default new Vuex.Store({
   state: {
     menu: [],
     cart: [],
+    orders: [],
     order: {
       orderNumber: "",
       timeStamp: Date.now(),
       items: [],
       totalValue: 0
     },
-    loading: false
+    loading: false,
+    user: {},
+    newUser: true
   },
   mutations: {
     persistMenu(state, data) {
       state.menu = data;
     },
     postThisOrder(state, data) {
-      state.order.eta = data.eta;
-      state.order.orderNumber = data.orderNr;
-      state.order.items = state.cart;
+      state.order = data;
       state.loading = false;
+    },
+    getUserHistory(state, data) {
+      state.orders = data;
     },
     addToCart(state, item) {
       if (state.cart.find(i => i.id === item.id)) {
@@ -56,8 +60,26 @@ export default new Vuex.Store({
       if (state.cart[index].quantity == 0) {
         state.cart.splice(index, 1);
       }
+    },
+    submitThisForm(state, user) {
+      state.user = user;
+      localStorage.setItem("User", JSON.stringify(state.user));
+
+      // localStorage.setItem("LogInName", JSON.stringify(this.name));
+      // localStorage.setItem("LogInEpost", JSON.stringify(this.epost));
+      // this.$router.push("/menu");
+    },
+    checkThisUser(state) {
+      let user = localStorage.getItem("User");
+      state.user = JSON.parse(user);
+      if (state.user !== null) {
+        state.newUser = false;
+      } else {
+        state.newUser = true;
+      }
     }
   },
+
   actions: {
     async getMenu(context) {
       const data = await API.fetchMenu();
@@ -66,14 +88,39 @@ export default new Vuex.Store({
     },
     async postOrder(context) {
       this.state.loading = true;
-      const data = await API.fetchOrder();
+
+      if (this.state.user == null) {
+        this.state["user"] = {};
+        const data = await API.fetchKey();
+        this.state.user["key"] = data.key;
+        localStorage.setItem("User", JSON.stringify(this.state.user));
+      }
+      console.log(this.state.user.key);
+
+      const data = await API.fetchOrder(
+        this.state.cart,
+        this.state.order.totalValue,
+        this.state.user.key
+      );
       context.commit("postThisOrder", data);
+    },
+    async getHistory(context) {
+      const data = await API.fetchUserOrder(this.state.user.key);
+      context.commit("getUserHistory", data.orders);
     },
     addItem(context, item) {
       context.commit("addToCart", item);
     },
     clearCart(context) {
       context.commit("emptyCart");
+    },
+    async submitForm(context, user) {
+      const data = await API.fetchKey();
+      user.key = data.key;
+      context.commit("submitThisForm", user);
+    },
+    checkUser(context) {
+      context.commit("checkThisUser");
     }
   },
   getters: {

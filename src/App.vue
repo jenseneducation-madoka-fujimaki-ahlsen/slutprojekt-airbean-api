@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  computed: {},
+  created() {
+    this.$store.dispatch("checkUser");
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
   height: 100vh;

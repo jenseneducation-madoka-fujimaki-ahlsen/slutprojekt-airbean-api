@@ -2,8 +2,8 @@
   <div class="history">
     <div class="profile-field">
       <img src="@/assets/graphics/person.svg" alt="" />
-      <h2 class="name">{{ name }}</h2>
-      <p class="email">{{ email }}</p>
+      <h2 class="name">{{ user.name }}</h2>
+      <p class="email">{{ user.epost }}</p>
     </div>
     <div class="order-history">
       <h2 class="history-title">Orderhistorik</h2>
@@ -23,7 +23,7 @@
       <hr />
       <div class="totalPrice">
         <p class="total">Totalt spenderat</p>
-        <p class="price">kr</p>
+        <p class="price">{{ totalSpend }} kr</p>
       </div>
     </div>
   </div>
@@ -31,28 +31,43 @@
 
 <script>
 export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+    history() {
+      return this.$store.state.orders;
+    }
+  },
+  async mounted() {
+    await this.$store.dispatch("getHistory");
+    this.history.forEach(order => {
+      this.totalSpend += order.totalValue;
+    });
+  },
+  methods: {},
   data: () => ({
-    name: "Sixten Kaffelövér",
-    email: "sixten.kaffelover@zocom.se",
-
-    history: [
-      {
-        orderNumber: "",
-        timeStamp: Date.now(),
-        items: [],
-        totalValue: 0
-        /*  orderNumber: "#AB1123282323Z",
-        timeStamp: 20200303,
-        Items: [],
-        totalValue: 5555 */
-      },
-      {
-        orderNumber: "#AB11232823233",
-        timeStamp: 20200303,
-        Items: [],
-        totalValue: 5555
-      }
-    ]
+    totalSpend: 0
+    // name: "Sixten Kaffelövér",
+    // email: "sixten.kaffelover@zocom.se",
+    // history: [
+    // {
+    //   orderNumber: "",
+    //   timeStamp: Date.now(),
+    //   items: [],
+    //   totalValue: 0
+    //   /*  orderNumber: "#AB1123282323Z",
+    //   timeStamp: 20200303,
+    //   Items: [],
+    //   totalValue: 5555 */
+    // },
+    // {
+    //   orderNumber: "#AB11232823233",
+    //   timeStamp: 20200303,
+    //   Items: [],
+    //   totalValue: 5555
+    // }
+    //]
   })
 };
 </script>
@@ -133,8 +148,8 @@ export default {
     color: $gray;
     font-weight: 608;
 
-    & .total {
-    }
+    // & .total {
+    // }
   }
 }
 </style>

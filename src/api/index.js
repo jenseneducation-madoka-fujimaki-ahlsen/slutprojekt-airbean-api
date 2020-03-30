@@ -10,10 +10,26 @@ async function fetchMenu() {
   return data;
 }
 
-async function fetchOrder() {
-  const response = await api.post("/beans");
+async function fetchOrder(items, totalValue, key) {
+  const response = await api.post("/beans", {
+    items: items,
+    totalValue: totalValue,
+    key: key
+  });
   const data = response.data;
   return data;
 }
 
-export { fetchMenu, fetchOrder };
+async function fetchKey() {
+  const response = await api.get("/beans/key");
+  const data = response.data;
+  return data;
+}
+
+async function fetchUserOrder(id) {
+  const response = await api.get("/beans/profile" + `/${id}`);
+  const data = response.data;
+  return data;
+}
+
+export { fetchMenu, fetchOrder, fetchKey, fetchUserOrder };
