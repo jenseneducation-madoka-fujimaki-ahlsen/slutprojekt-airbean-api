@@ -41,9 +41,11 @@ export default {
   },
   async mounted() {
     await this.$store.dispatch("getHistory");
-    this.history.forEach(order => {
-      this.totalSpend += order.totalValue;
-    });
+    if (!this.history == undefined) {
+      this.history.forEach(order => {
+        this.totalSpend += order.totalValue;
+      });
+    }
   },
   methods: {},
   data: () => ({
