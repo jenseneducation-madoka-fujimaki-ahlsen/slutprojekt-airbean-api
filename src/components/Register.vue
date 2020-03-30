@@ -36,7 +36,6 @@
 <script>
 export default {
   components: {},
-
   data: () => ({
     bigText: "Vällkommen till AirBean-familjen!",
     smallText:
@@ -45,14 +44,12 @@ export default {
     epost: "",
     consent: false
   }),
-
   methods: {
     async submit() {
       if (this.name !== "" && this.epost !== "" && this.consent == true) {
         let user = {
           name: this.name,
           epost: this.epost
-          // consent: this.consent
         };
         await this.$store.dispatch("submitForm", user);
         this.$router.go();
@@ -64,7 +61,6 @@ export default {
       } else {
         this.consent = true;
       }
-      // localStorage.setItem("cookie-consent", JSON.stringify(this.consent));
     }
   },
   computed: {
@@ -77,7 +73,6 @@ export default {
 
 <style lang="scss">
 @import "../scss/main";
-
 .register {
   position: absolute;
   width: 90%;
@@ -87,23 +82,19 @@ export default {
   text-align: center;
   border-radius: 5px;
   padding: 0 20px;
-
   .title {
     line-height: 1.3;
     font-size: 30px;
   }
-
   .text {
     margin: 10px 0;
   }
-
   .logo-wrap {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     margin: 40px 0 12px;
-
     .logo-bg {
       position: absolute;
       width: 30px;
@@ -113,18 +104,15 @@ export default {
       border-radius: 50%;
     }
   }
-
   .form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     label {
       margin: 0;
       margin-top: 15px;
       font-size: 12px;
     }
-
     .input {
       width: 100%;
       height: 42px;
@@ -134,18 +122,14 @@ export default {
       padding: 20px;
       font-size: 18px;
     }
-
     input[type="checkbox"] {
       appearance: none;
-      // opacity: 0;
     }
-
     .checkbox-wrap {
       margin: 26px 0 0 0;
       position: relative;
       display: flex;
       align-items: center;
-
       label {
         margin-top: 0;
         cursor: pointer;
@@ -156,7 +140,6 @@ export default {
         border-radius: 50px;
         border: 1px solid rgb(0, 0, 0);
       }
-
       input[type="checkbox"]:checked + label:after {
         filter: alpha(opacity=0);
         opacity: 0;
@@ -169,12 +152,10 @@ export default {
         background: #0e927d;
         border-radius: 50px;
       }
-
       input[type="checkbox"]:checked + label:hover::after {
         filter: alpha(opacity=30);
         opacity: 1;
       }
-
       p {
         margin: 0 0 5px 32px;
       }
