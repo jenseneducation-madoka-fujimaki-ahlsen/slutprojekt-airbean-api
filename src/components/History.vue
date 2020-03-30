@@ -39,15 +39,6 @@ export default {
       return this.$store.state.orders;
     }
   },
-  async mounted() {
-    await this.$store.dispatch("getHistory");
-    if (!this.history == undefined) {
-      this.history.forEach(order => {
-        this.totalSpend += order.totalValue;
-      });
-    }
-  },
-  methods: {},
   data: () => ({
     totalSpend: 0
     // name: "Sixten Kaffelövér",
@@ -70,7 +61,16 @@ export default {
     //   totalValue: 5555
     // }
     //]
-  })
+  }),
+  async mounted() {
+    await this.$store.dispatch("getHistory");
+    if (!this.history.length == 0) {
+      this.history.forEach(order => {
+        this.totalSpend += order.totalValue;
+      });
+    }
+  },
+  methods: {}
 };
 </script>
 
