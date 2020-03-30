@@ -2,8 +2,6 @@
   <div class="our-coffee bg-color">
     <Header />
     <div class="our-coffee-wrap">
-      <!-- <img :src="headerImagePath" alt="graphics-header"> -->
-      <!-- <img class="header__img" src="@/assets/graphics/graphics-header.svg" alt=""> -->
       <h1 class="title">{{ title }}</h1>
       <div class="text">
         <p id="text1">{{ text1 }}</p>
@@ -31,13 +29,11 @@
 
 <script>
 import Header from "@/components/Header";
-
 export default {
   components: {
     Header
   },
   name: "Background",
-
   data() {
     return {
       title: "Vårt kaffe",
@@ -57,13 +53,9 @@ export default {
 <style lang="scss">
 @import "../scss/main";
 
-.our-coffee {
-}
-
 .our-coffee-wrap {
   padding: 20px 32px;
 }
-
 #text1 {
   font-weight: bold;
   margin: 20px 0;
@@ -72,22 +64,17 @@ export default {
   font-size: 1em;
   margin-bottom: 20px;
 }
-
 .eva-cortado-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 40px;
 }
-
 .eva-cortado__img__wrap {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
   width: 73px;
   height: 73px;
-}
-
-.eva-cortado__img {
 }
 </style>
