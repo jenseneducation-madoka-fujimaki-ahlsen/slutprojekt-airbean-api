@@ -44,10 +44,12 @@ export default {
   }),
   async mounted() {
     await this.$store.dispatch("getHistory");
-    if (!this.history.length == 0) {
-      this.history.forEach(order => {
-        this.totalSpend += order.totalValue;
-      });
+    if (this.history) {
+      if (!this.history.length == 0) {
+        this.history.forEach(order => {
+          this.totalSpend += order.totalValue;
+        });
+      }
     }
   },
   methods: {

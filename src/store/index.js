@@ -68,10 +68,12 @@ export default new Vuex.Store({
     checkThisUser(state) {
       let user = localStorage.getItem("User");
       state.user = JSON.parse(user);
-      if (state.user !== null) {
-        state.newUser = false;
-      } else {
-        state.newUser = true;
+      if (state.user) {
+        if (state.user["name"]) {
+          state.newUser = false;
+        } else {
+          state.newUser = true;
+        }
       }
     }
   },
