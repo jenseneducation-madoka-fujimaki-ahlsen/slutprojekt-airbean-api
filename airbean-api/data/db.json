@@ -1,178 +1,39 @@
 {
   "users": [
     {
-      "id": "a9d77261-9771-45a5-8e67-d6e85df73515",
+      "id": "2ebc1175-f5f9-4a6b-a73c-f9157aeadb98",
       "orders": [
         {
-          "eta": 22,
-          "orderNumber": "AB1585526041578Z",
-          "timeStamp": 1585526041578,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 39
-        },
-        {
-          "eta": 11,
-          "orderNumber": "AB1585526481255X",
-          "timeStamp": 1585526481255,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 4
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 205
-        },
-        {
-          "eta": 16,
-          "orderNumber": "AB1585527101772Y",
-          "timeStamp": 1585527101772,
-          "items": [
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 49
-        }
-      ]
-    },
-    {
-      "id": "37f73c22-90d9-4648-a6c1-168ea7487059",
-      "orders": [
-        {
-          "eta": 19,
-          "orderNumber": "AB1585531481584X",
-          "timeStamp": 1585531481584,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 39
-        },
-        {
-          "eta": 19,
-          "orderNumber": "AB1585531535175Y",
-          "timeStamp": 1585531535175,
+          "eta": 28,
+          "orderNumber": "AB1585590970610Z",
+          "timeStamp": 1585590970610,
           "items": [
             {
               "id": 2,
               "price": 49,
               "title": "Caffè Doppio",
               "quantity": 2
-            }
-          ],
-          "totalValue": 98
-        },
-        {
-          "eta": 13,
-          "orderNumber": "AB1585532581424Y",
-          "timeStamp": 1585532581424,
-          "items": [
+            },
             {
               "id": 1,
               "price": 39,
               "title": "Bryggkaffe",
-              "quantity": 3
+              "quantity": 5
             }
           ],
-          "totalValue": 117
+          "totalValue": 293
         },
         {
           "eta": 29,
-          "orderNumber": "AB1585532664471X",
-          "timeStamp": 1585532664471,
+          "orderNumber": "AB1585591002076X",
+          "timeStamp": 1585591002076,
           "items": [
             {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
+              "id": 3,
               "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 88
-        }
-      ]
-    },
-    {
-      "id": "c21e0213-1e66-4e8b-9eeb-0de980bf0056",
-      "orders": [
-        {
-          "eta": 10,
-          "orderNumber": "AB1585550104584X",
-          "timeStamp": 1585550104584,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
+              "title": "Cappuccino",
               "quantity": 2
             },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 127
-        }
-      ]
-    },
-    {
-      "id": "aad2e1a6-a507-4a24-b8e2-b8166eae8c53",
-      "orders": [
-        {
-          "eta": 20,
-          "orderNumber": "AB1585550163351X",
-          "timeStamp": 1585550163351,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 2
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 127
-        },
-        {
-          "eta": 23,
-          "orderNumber": "AB1585550397368Z",
-          "timeStamp": 1585550397368,
-          "items": [
             {
               "id": 4,
               "price": 49,
@@ -180,269 +41,17 @@
               "quantity": 1
             }
           ],
-          "totalValue": 49
+          "totalValue": 147
         }
       ]
     },
     {
-      "id": "5d1d6187-4cdc-4007-8c61-58c4fedf727d",
+      "id": "fcbf73c6-bce6-4013-a9f4-799985de4a4d",
       "orders": [
         {
-          "eta": 28,
-          "orderNumber": "AB1585553145725X",
-          "timeStamp": 1585553145725,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        },
-        {
-          "eta": 24,
-          "orderNumber": "AB1585553224230Y",
-          "timeStamp": 1585553224230,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 2
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 186
-        },
-        {
-          "eta": 18,
-          "orderNumber": "AB1585553323602Z",
-          "timeStamp": 1585553323602,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 88
-        }
-      ]
-    },
-    {
-      "id": "6bf28e72-a320-4304-991a-8d1780abb88c",
-      "orders": [
-        {
-          "eta": 16,
-          "orderNumber": "AB1585555539784Y",
-          "timeStamp": 1585555539784,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        }
-      ]
-    },
-    {
-      "id": "f7d54fc2-ad76-41ce-a026-1352150b80dc",
-      "orders": [
-        {
-          "eta": 11,
-          "orderNumber": "AB1585559109430X",
-          "timeStamp": 1585559109430,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        }
-      ]
-    },
-    {
-      "id": "75ec442d-272e-448a-9ec7-21ffc862e731",
-      "orders": [
-        {
-          "eta": 21,
-          "orderNumber": "AB1585559311108Z",
-          "timeStamp": 1585559311108,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        }
-      ]
-    },
-    {
-      "id": "cdeb7125-83dc-4009-9a8d-351f204965a4",
-      "orders": [
-        {
-          "eta": 21,
-          "orderNumber": "AB1585559894725Z",
-          "timeStamp": 1585559894725,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        }
-      ]
-    },
-    {
-      "id": "0cd02ca5-e27b-4358-9ef1-6826b53721cc",
-      "orders": [
-        {
-          "eta": 21,
-          "orderNumber": "AB1585560223477Z",
-          "timeStamp": 1585560223477,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 88
-        }
-      ]
-    },
-    {
-      "id": "d48fe3ae-f7ad-4a21-b806-c7889e67b927",
-      "orders": [
-        {
-          "eta": 17,
-          "orderNumber": "AB1585560703703Y",
-          "timeStamp": 1585560703703,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        },
-        {
-          "eta": 19,
-          "orderNumber": "AB1585567997005Y",
-          "timeStamp": 1585567997005,
+          "eta": 27,
+          "orderNumber": "AB1585591083115X",
+          "timeStamp": 1585591083115,
           "items": [
             {
               "id": 1,
@@ -458,186 +67,30 @@
             }
           ],
           "totalValue": 127
-        }
-      ]
-    },
-    {
-      "id": "4c436f23-2448-4998-82d0-4f7515b0ac70",
-      "orders": [
-        {
-          "eta": 27,
-          "orderNumber": "AB1585571659510Y",
-          "timeStamp": 1585571659510,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        }
-      ]
-    },
-    {
-      "id": "041d7b36-f5d4-4535-9878-ddef105f41d3",
-      "orders": [
-        {
-          "eta": 15,
-          "orderNumber": "AB1585572804784Y",
-          "timeStamp": 1585572804784,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        }
-      ]
-    },
-    {
-      "id": "6fce24e4-69c1-42cc-bdd1-90bb106dc26c",
-      "orders": [
-        {
-          "eta": 19,
-          "orderNumber": "AB1585572995237Y",
-          "timeStamp": 1585572995237,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 88
         },
         {
-          "eta": 11,
-          "orderNumber": "AB1585575201119Z",
-          "timeStamp": 1585575201119,
+          "eta": 22,
+          "orderNumber": "AB1585591137959X",
+          "timeStamp": 1585591137959,
           "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
             {
               "id": 2,
               "price": 49,
               "title": "Caffè Doppio",
               "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
             }
           ],
-          "totalValue": 137
-        },
-        {
-          "eta": 21,
-          "orderNumber": "AB1585575213433X",
-          "timeStamp": 1585575213433,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
+          "totalValue": 49
         }
       ]
     },
     {
-      "id": "fc4d520c-1818-43d4-b59f-f8b0ba391564",
+      "id": "37c9d3c7-72bc-4093-9643-3ed3b1abc560",
       "orders": [
         {
-          "eta": 16,
-          "orderNumber": "AB1585575255601Z",
-          "timeStamp": 1585575255601,
-          "items": [
-            {
-              "id": 1,
-              "price": 39,
-              "title": "Bryggkaffe",
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "price": 49,
-              "title": "Caffè Doppio",
-              "quantity": 1
-            },
-            {
-              "id": 3,
-              "price": 49,
-              "title": "Cappuccino",
-              "quantity": 1
-            }
-          ],
-          "totalValue": 137
-        }
-      ]
-    },
-    {
-      "id": "c40dd790-a3c5-4f97-ae3e-4f796abc5fcf",
-      "orders": [
-        {
-          "eta": 27,
-          "orderNumber": "AB1585557541831X",
-          "timeStamp": 1585557541831,
+          "eta": 14,
+          "orderNumber": "AB1585591259006Z",
+          "timeStamp": 1585591259006,
           "items": [
             {
               "id": 1,
