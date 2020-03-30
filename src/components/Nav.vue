@@ -72,10 +72,6 @@ export default {
         name: "Min profile",
         link: "/profile"
       }
-      // {
-      //   name: "Orderstatus",
-      //   link: "/orderstatus"
-      // }
     ]
   }),
   methods: {
@@ -93,12 +89,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../scss/main";
-
 .nav-menu {
   position: absolute;
   top: 0;
   z-index: 9999;
-
   &__bg {
     width: 100%;
     height: 100%;
@@ -106,34 +100,29 @@ export default {
     position: absolute;
   }
 }
-
 .nav-menu-open {
   width: 100%;
   height: 100%;
   position: fixed;
 }
-
 .hamburger-menu-wrap {
   z-index: 999;
   position: relative;
   display: flex;
   margin: 20px auto auto 20px;
 }
-
 img {
   position: absolute;
   margin: 13px auto auto 12px;
   width: 26px;
   height: 26px;
 }
-
 .navicon-bg {
   width: 50px;
   height: 50px;
   background-color: white;
   border-radius: 50%;
 }
-
 .nav {
   position: relative;
   height: 100vh;
@@ -142,12 +131,10 @@ img {
   text-align: center;
   justify-content: center;
   margin-top: -100px;
-
   &__wrap {
     list-style: none;
     margin: 0;
     padding: 0;
-
     li:last-of-type {
       .line {
         display: none;
@@ -155,13 +142,11 @@ img {
     }
   }
 }
-
 .menu-list {
   margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   .line {
     border-bottom: 1px solid $lightbrown;
     width: 64px;
@@ -169,7 +154,6 @@ img {
     opacity: 0.5;
   }
 }
-
 .menu-list-link {
   color: white;
   text-decoration: none;
